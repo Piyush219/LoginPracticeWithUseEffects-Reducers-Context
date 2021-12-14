@@ -45,7 +45,7 @@ const Login = (props) => {
     const identifier = setTimeout(() => {
       console.log('Checking Validity')
       setFormIsValid(
-        emailIsValid && passowardIsValid
+        emailIsValid && passowardIsValid && enteredCollegeName.trim().length > 0
       );
     }, 500);
 
@@ -53,7 +53,7 @@ const Login = (props) => {
       console.log('CLEANUP');
       clearTimeout(identifier);
     };
-  }, [emailIsValid, passowardIsValid]); //[enteredEmail, enteredPassword, enteredCollegeName]
+  }, [emailIsValid, passowardIsValid, enteredCollegeName]); //[enteredEmail, enteredPassword, enteredCollegeName]
 
   const emailChangeHandler = (event) => {
 
